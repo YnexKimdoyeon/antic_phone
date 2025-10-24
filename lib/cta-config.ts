@@ -5,7 +5,7 @@ export const CTA_CONFIG = {
   // 상담하러가기 버튼 설정
   consultation: {
     text: "상담하러가기",
-    href: "tel:010-5782-5248", // 전화번호 링크
+    href: "https://open.kakao.com/o/sfbDn3Cf", // 전화번호 링크
     // 또는 카카오톡, 웹사이트 등 다른 링크로 변경 가능
     // href: "https://open.kakao.com/o/sfbDn3Cf", // 카카오톡 채널
     // href: "https://open.kakao.com/o/sfbDn3Cf", // 웹사이트 상담 페이지
