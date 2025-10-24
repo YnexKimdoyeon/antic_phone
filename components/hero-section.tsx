@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
+import { CTA_CONFIG } from "@/lib/cta-config"
 
 export function HeroSection() {
   return (
@@ -15,21 +16,31 @@ export function HeroSection() {
             중고폰 · 미납폰 · 오늘 개통한 폰 매입 전문
           </p>
           <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" variant="secondary" className="w-full text-lg sm:w-auto">
-              상담하러가기
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="w-full text-lg sm:w-auto"
+              asChild
+            >
+              <a href={CTA_CONFIG.consultation.href}>
+                {CTA_CONFIG.consultation.text}
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="w-full border-2 border-primary-foreground bg-transparent text-lg text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto"
+              asChild
             >
-              단가보러가기
+              <a href={CTA_CONFIG.pricing.href}>
+                {CTA_CONFIG.pricing.text}
+              </a>
             </Button>
           </div>
           <div className="flex items-center justify-center gap-2 text-primary-foreground/90">
             <Phone className="h-5 w-5" />
-            <span className="text-lg font-semibold">24시간 상담 가능</span>
-            <span className="text-lg font-bold">010-5782-5248</span>
+            <span className="text-lg font-semibold">{CTA_CONFIG.phone.displayText}</span>
+            <span className="text-lg font-bold">{CTA_CONFIG.phone.number}</span>
           </div>
         </div>
       </div>

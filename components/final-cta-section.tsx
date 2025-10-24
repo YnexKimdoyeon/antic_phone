@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Phone, Zap, Truck } from "lucide-react"
+import { CTA_CONFIG } from "@/lib/cta-config"
 
 export function FinalCtaSection() {
   return (
@@ -12,15 +13,25 @@ export function FinalCtaSection() {
             아울렛에서 즐기자
           </h2>
           <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" variant="secondary" className="w-full text-lg sm:w-auto">
-              상담하러가기
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="w-full text-lg sm:w-auto"
+              asChild
+            >
+              <a href={CTA_CONFIG.consultation.href}>
+                {CTA_CONFIG.consultation.text}
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="w-full border-2 border-primary-foreground bg-transparent text-lg text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto"
+              asChild
             >
-              단가보러가기
+              <a href={CTA_CONFIG.pricing.href}>
+                {CTA_CONFIG.pricing.text}
+              </a>
             </Button>
           </div>
           <div className="mb-6 flex flex-col items-center justify-center gap-4 text-primary-foreground/90 sm:flex-row sm:gap-8">
@@ -39,8 +50,8 @@ export function FinalCtaSection() {
           </div>
           <div className="flex items-center justify-center gap-2 text-primary-foreground">
             <Phone className="h-6 w-6" />
-            <span className="text-xl font-semibold">24시간 상담 가능</span>
-            <span className="text-xl font-bold">010-5782-5248</span>
+            <span className="text-xl font-semibold">{CTA_CONFIG.phone.displayText}</span>
+            <span className="text-xl font-bold">{CTA_CONFIG.phone.number}</span>
           </div>
         </div>
       </div>
