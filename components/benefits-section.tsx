@@ -14,7 +14,7 @@ const benefits = [
   },
   {
     icon: Zap,
-    title: "빠른 현금화",
+    title: "24시간매입",
     description: "당일 입금 가능",
   },
   {
